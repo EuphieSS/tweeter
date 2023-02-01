@@ -1,3 +1,4 @@
+/* -------------- COMPOSE NEW TWEET -------------- */
 .new-tweet {
   display: flex;
   width: 100%;
@@ -37,4 +38,46 @@ textarea {
   border: none;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 4px 12px;
+}
+
+/* -------------- PREVIOUS TWEETS -------------- */
+.old-tweet {
+  height: 210px;
+  margin: 60px 0;
+  border: 3px solid #545149;
+}
+
+.old-tweet:hover {
+  box-shadow: 5px 5px #ccc;;
+}
+
+.old-tweet article header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.old-tweet article p {
+  margin: auto;
+  width: 95%;
+  padding: 1em;
+  border-bottom: 3px solid #545149;
+}
+
+.old-tweet article footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.old-tweet article footer i {
+  color: #274198;
+  font-size: 16px;
+  padding: 0px 5px;
+}
+
+.old-tweet i:hover {
+  color: #F2921D;
 }
