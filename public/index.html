@@ -54,7 +54,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-       <!-- <h2>Compose Tweet</h2> -->
         <form class="tweet-form" action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -66,24 +65,7 @@
       </section>
 
       <section class="old-tweet">
-        <article>
-          <header>
-            <div>
-              <img alt="profile pic" src="">
-              <span>username</span>
-            </div>
-            <span id="tweet-handle">@userhandle</span>
-          </header>
-          <p>If I have seen further it is by standing on the shoulders of giants.</p>
-          <footer>
-            <span>10 days ago</span>
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+        <!-- client.js will provide info to render on client side -->
       </section>
     </main>
 
