@@ -41,20 +41,31 @@ textarea {
 }
 
 /* -------------- PREVIOUS TWEETS -------------- */
-.old-tweet {
-  height: 210px;
+.old-tweet article {
+  height: 245px;
   margin: 60px 0;
   border: 3px solid #545149;
 }
 
-.old-tweet:hover {
+.old-tweet article:hover {
   box-shadow: 5px 5px #ccc;;
 }
 
 .old-tweet article header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1em;
+}
+
+.old-tweet article header div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.old-tweet #tweet-handle {
+  color: #c8b9ea;
 }
 
 .old-tweet article p {
@@ -62,6 +73,7 @@ textarea {
   width: 95%;
   padding: 1em;
   border-bottom: 3px solid #545149;
+  font-weight: bold;
 }
 
 .old-tweet article footer {
