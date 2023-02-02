@@ -24,6 +24,11 @@
   outline: none;
 }
 
+.new-tweet .error-message {
+  color: rgb(234, 11, 111);
+  font-family: Source Sans Pro, sans-serif;
+}
+
 .tweet-button-counter {
   display: flex;
   justify-content: space-between;

@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//The function below re-encodes text so that unsafe characters are converted into a safe "encoded" representation (prevents XSS attacks).
+
+//The function below re-encodes text so that unsafe characters are converted 
+//into a safe "encoded" representation (prevents XSS attacks).
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -53,23 +55,31 @@ const loadTweets = function() { //make a request to /tweets and receive the arra
 };
 
 
+
 /////////////////////// jQuery's document ready function ///////////////////////
 
 $(function() {
+  $(".error-message").hide();//hide error messages by default
+
   $(".tweet-form").submit(function(event) {
     event.preventDefault();
 
+    $("#error-blank").slideUp("slow");
+    $("#error-over-limit").slideUp("slow");
+
     const charLimit = 140;
-    const tweetLength = $(this).find("#tweet-text").val().length;
+    const tweetLength = $("#tweet-text").val().length;
     //.find selector gets the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element
 
-    if (!tweetLength) {
-      alert("Please enter your tweet!");
+    if (!$("#tweet-text").val() || $("#tweet-text").val().trim() === "") {
+      $("#error-blank").slideDown("slow");
+      $("#error-over-limit").hide();
       return;
     }
 
     if (tweetLength > charLimit) {
-      alert("Oops your tweet is too long!");
+      $("#error-over-limit").slideDown("slow");
+      $("#error-blank").hide();
       return;
     }
     
