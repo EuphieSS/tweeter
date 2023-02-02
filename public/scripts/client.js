@@ -34,7 +34,7 @@ const data = [
 const renderTweets = function(tweets) { //loop through a data object and feed each element to createTweetElement
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('.old-tweet').append($tweet);
+    $(".old-tweet").append($tweet);
   }
 };
 
@@ -62,10 +62,18 @@ const createTweetElement = (tweetObj) => { //turn a tweet object into a HTML twe
     `;
 
   return $oldTweet;
+
 };
 
 
 
 $(function() {
   renderTweets(data);
+
+  $(".tweet-form").submit(function(event) {
+    event.preventDefault();
+    const $newTweet = $(this).serialize();
+    $.post("/tweets/", $newTweet);
+  })
+
 });
