@@ -6,6 +6,7 @@
 
 
 const renderTweets = function(tweets) { //loop through a data object and feed each element to createTweetElement
+  $(".old-tweet").empty(); //allow latest tweet to display without refreshing
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $(".old-tweet").append($tweet);
@@ -41,7 +42,7 @@ const createTweetElement = function(tweetObj) { //turn a tweet object into a HTM
 
 const loadTweets = function() { //make a request to /tweets and receive the array of tweets as JSON
   $.getJSON("/tweets/", function(data) {
-    renderTweets(data);
+    renderTweets(data.reverse());
   });
 };
 
@@ -65,6 +66,7 @@ $(function() {
       
     const $newTweet = $(this).serialize();
     $.post("/tweets/", $newTweet, function() { //send data to the server
+      $("#tweet-text").val(""); //clear textarea for next input
       loadTweets(); //if the request succeeds, this function will execute
     });
     
