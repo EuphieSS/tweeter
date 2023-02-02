@@ -42,13 +42,13 @@
 
 /* -------------- PREVIOUS TWEETS -------------- */
 .old-tweet article {
-  height: 245px;
+  height: auto;
   margin: 60px 0;
   border: 3px solid #545149;
 }
 
 .old-tweet article:hover {
-  box-shadow: 5px 5px #ccc;;
+  box-shadow: 7px 7px #ccc;;
 }
 
 .old-tweet article header {
@@ -80,6 +80,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 40px;
+  padding-bottom: 20px;
   font-size: 16px;
   font-weight: bold;
 }
