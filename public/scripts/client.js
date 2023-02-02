@@ -4,6 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//The function below re-encodes text so that unsafe characters are converted into a safe "encoded" representation (prevents XSS attacks).
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const renderTweets = function(tweets) { //loop through a data object and feed each element to createTweetElement
   $(".old-tweet").empty(); //allow latest tweet to display without refreshing
@@ -24,7 +30,7 @@ const createTweetElement = function(tweetObj) { //turn a tweet object into a HTM
         </div>
         <span id="tweet-handle">${tweetObj.user.handle}</span>
       </header>
-      <p>${tweetObj.content.text}</p>
+      <p>${escape(tweetObj.content.text)}</p>
       <footer>
         <span>${timeago.format(tweetObj.created_at)}</span>
         <div>
@@ -46,6 +52,8 @@ const loadTweets = function() { //make a request to /tweets and receive the arra
   });
 };
 
+
+/////////////////////// jQuery's document ready function ///////////////////////
 
 $(function() {
   $(".tweet-form").submit(function(event) {
