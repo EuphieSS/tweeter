@@ -51,6 +51,7 @@ $(function() {
   $(".tweet-form").submit(function(event) {
     event.preventDefault();
 
+    const charLimit = 140;
     const tweetLength = $(this).find("#tweet-text").val().length;
     //.find selector gets the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element
 
@@ -59,14 +60,15 @@ $(function() {
       return;
     }
 
-    if (tweetLength > 140) {
+    if (tweetLength > charLimit) {
       alert("Oops your tweet is too long!");
       return;
     }
-      
+    
     const $newTweet = $(this).serialize();
     $.post("/tweets/", $newTweet, function() { //send data to the server
       $("#tweet-text").val(""); //clear textarea for next input
+      $(".counter").val(charLimit); //reset counter after textarea clears
       loadTweets(); //if the request succeeds, this function will execute
     });
     
