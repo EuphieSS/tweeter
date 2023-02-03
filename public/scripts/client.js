@@ -64,13 +64,14 @@ $(function() {
 
   $(".nav-bar-write button").click(function() { //toggle to show .tweet-form
     $(".tweet-form").slideToggle("slow");
+    $("#tweet-text").focus();
   });
 
   $(".tweet-form").submit(function(event) {
     event.preventDefault();
 
-    $("#error-blank").slideUp("slow");
-    $("#error-over-limit").slideUp("slow");
+    $("#error-blank").slideUp("slow"); //reset(hide) the message when input is valid
+    $("#error-over-limit").slideUp("slow"); //reset(hide) the message when input is valid
 
     const charLimit = 140;
     const tweetLength = $("#tweet-text").val().length;
