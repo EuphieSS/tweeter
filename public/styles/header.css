@@ -1,3 +1,4 @@
+/* Tablet Styles */
 header.profile {
   display: flex;
   flex-direction: column;
@@ -12,4 +13,21 @@ header.profile {
 
 .profile-pic {
   padding-top: 40px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  header.profile {
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin: 2.5rem;
+    margin-top: 200px;
+    padding: 25px 0;
+  }
+
+  .profile-pic {
+    padding: 0;
+  }
+
 }
