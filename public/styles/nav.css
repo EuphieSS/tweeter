@@ -14,16 +14,20 @@
   font-family: Bungee, sans-serif;
   font-size: 48px;
   padding-left: 45px;
-  padding-bottom: 0.5em;
+  padding-bottom: 25px;
  }
 
 .nav-bar-write {
+  font-size: 28px;
+  padding-right: 45px;
+  padding-bottom: 25px;
+}
+
+.nav-bar-write button {
+  all: unset;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 28px;
-  padding-right: 45px;
-  padding-bottom: 0.5em;
 }
 
 .inline-text {
@@ -32,4 +36,18 @@
 
 .nav-bar i {
   color: rgb(234, 11, 111);
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.nav-bar i:hover {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
 }

@@ -59,7 +59,12 @@ const loadTweets = function() { //make a request to /tweets and receive the arra
 /////////////////////// jQuery's document ready function ///////////////////////
 
 $(function() {
-  $(".error-message").hide();//hide error messages by default
+  $(".error-message").hide(); //hide error messages by default
+  $(".tweet-form").hide(); //hide .tweet-form by default
+
+  $(".nav-bar-write button").click(function() { //toggle to show .tweet-form
+    $(".tweet-form").slideToggle("slow");
+  });
 
   $(".tweet-form").submit(function(event) {
     event.preventDefault();
@@ -91,4 +96,5 @@ $(function() {
     });
     
   });
+
 });
