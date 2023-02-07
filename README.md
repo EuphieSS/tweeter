@@ -14,7 +14,7 @@ This project is built by Samma Su for her study at Lighthouse Labs, as a demonst
 
 ## Final Product
 
-!["app-in-desktop-style"](https://github.com/EuphieSS/tweeter/blob/master/docs/app-in-desktop-style.png?raw=true)
+!["app-in-desktop-style"](https://github.com/EuphieSS/tweeter/blob/master/docs/app-in-desktop-style-new.png?raw=true)
 !["app-in-tablet-style"](https://github.com/EuphieSS/tweeter/blob/master/docs/app-in-tablet-style.png?raw=true)
 !["tweets"](https://github.com/EuphieSS/tweeter/blob/master/docs/tweets.png?raw=true)
 !["error-handling"](https://github.com/EuphieSS/tweeter/blob/master/docs/error-handling.png?raw=true)
