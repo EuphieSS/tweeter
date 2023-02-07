@@ -17,7 +17,7 @@ const renderTweets = function(tweets) { //loop through a data object and feed ea
   $(".old-tweet").empty(); //allow latest tweet to display without refreshing
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $(".old-tweet").append($tweet);
+    $(".old-tweet").prepend($tweet);
   }
 };
 
@@ -50,7 +50,7 @@ const createTweetElement = function(tweetObj) { //turn a tweet object into a HTM
 
 const loadTweets = function() { //make a request to /tweets and receive the array of tweets as JSON
   $.getJSON("/tweets/", function(data) {
-    renderTweets(data.reverse());
+    renderTweets(data);
   });
 };
 
@@ -59,6 +59,8 @@ const loadTweets = function() { //make a request to /tweets and receive the arra
 /////////////////////// jQuery's document ready function ///////////////////////
 
 $(function() {
+  loadTweets(); //render any existing tweets
+
   $(".error-message").hide(); //hide error messages by default
   $(".tweet-form").hide(); //hide .tweet-form by default
 
@@ -75,7 +77,6 @@ $(function() {
 
     const charLimit = 140;
     const tweetLength = $("#tweet-text").val().length;
-    //.find selector gets the descendants of each element in the current set of matched elements, filtered by a selector, jQuery object, or element
 
     if (!$("#tweet-text").val() || $("#tweet-text").val().trim() === "") {
       $("#error-blank").slideDown("slow");
